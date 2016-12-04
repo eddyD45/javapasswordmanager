@@ -39,13 +39,20 @@ public class PasswordGen {
 		System.out.println("Randomly Generated Password: " + newpassword.getpassword());
 		
 		//ask if the user wants to generate another
-		do{
-			System.out.println("Generate again? (True/False)");
+		System.out.println("Generate again? (True/False)");
+		repeat = scanner.nextBoolean();
+		
+		newpassword = new PasswordGen(length, capital, lowercase, number, symbol);
+
+		while(repeat == true){
+			System.out.println("Randomly Generated Password: " + newpassword.getpassword());
+			
+			System.out.print("Generate again? (True/False) ");
 			repeat = scanner.nextBoolean();
 			
 			newpassword = new PasswordGen(length, capital, lowercase, number, symbol);
-			System.out.println("Randomly Generated Password: " + newpassword.getpassword());
-		}while(repeat = true);
+
+		}
 	}
 	
 	public PasswordGen(int length, boolean capital, boolean lowercase, boolean number, boolean symbol){
