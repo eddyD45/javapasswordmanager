@@ -1,4 +1,4 @@
-package com.max;
+
 
 import java.util.Scanner;
 
