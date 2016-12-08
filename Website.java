@@ -45,7 +45,7 @@ public class Website implements Serializable, Comparable<Website> {
 
     public void setUserName(String username) { userName = username; }
 
-    public void setSiteURl(String url) throws MalformedURLException {
+    public void setSiteURL(String url) throws MalformedURLException {
             siteURl = new URL(url);
     } // setSiteUrl
 
@@ -106,7 +106,6 @@ public class Website implements Serializable, Comparable<Website> {
         desktop.browse(siteURl.toURI());
     } // openWebsite
 
-    @Override
     public int compareTo(Website website) {
 
         if ( this.favorite == website.favorite) {
