@@ -64,6 +64,18 @@ public class Password implements Serializable {
      * @return
      */
     public String getKey() { return key; }
+    
+    /**
+     * Returns true if key is set,
+     * false otherwise.
+     * @return
+     */
+    public boolean isKeySet() {
+        if ( key == null || key.equals("")){
+            return false;
+        }
+        return true;
+    }
 
     /**
      * Clears current password.
