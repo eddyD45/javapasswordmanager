@@ -81,7 +81,13 @@ public class Password implements Serializable {
      * Clears current password.
      */
     public void clearPassword() { strPassword = ""; }
-
+    
+    /**
+     * Clears current encrypted password.
+     **/
+    public void clearEncryptedPassword() {encPassword = "";}
+    
+    
     /**
      * Clears current decrypted password.
      */
@@ -91,7 +97,7 @@ public class Password implements Serializable {
      * Generates a new encryption key.
      */
     public void generateKey() {
-        ArrayList<Character> temp = new ArrayList<>();
+        ArrayList<Character> temp = new ArrayList<Character>();
 
         for (int j = 0; j < chars.length(); j++) {
             temp.add(chars.charAt(j));
@@ -114,7 +120,7 @@ public class Password implements Serializable {
     public void encryptPassword() {
         int charCount = chars.length();
         int passCount = strPassword.length();
-
+        clearEncryptedPassword();
         for (int i = 0; i < passCount; i++) {
             for (int j = 0; j < charCount; j++) {
                 if (strPassword.charAt(i) == chars.charAt(j)) {
@@ -130,7 +136,7 @@ public class Password implements Serializable {
     public void decryptPassword() {
         int charCount = key.length();
         int encPassCount = encPassword.length();
-
+        clearDecryptedPassword();
         for (int i = 0; i < encPassCount; i++){
             for (int j = 0; j < charCount; j++){
                 if (encPassword.charAt(i) == key.charAt(j)){
