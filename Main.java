@@ -6,12 +6,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Password s = new Password();
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter a password: ");
-        System.out.print("--> ");
-        String pass = input.next();
-
+		boolean a = true;
+		boolean b= false;
+		
+		User user = new User();
+		String pass = user.PasswordGen(20, a, b, a, a);
+		Password s = new Password();
         s.setStrPassword(pass);
         s.generateKey();
         s.encryptPassword();
