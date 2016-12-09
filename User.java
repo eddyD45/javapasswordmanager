@@ -44,7 +44,6 @@ public class User implements Serializable {
 		site.setSiteURL( url );
 		site.setFavorite( favorite );
 		site.setNotes( notes );
-    	site.setIndex( folder.getSiteList().size() );
     
     	folderList.get(folderList.indexOf(folder)).addSite(site);
 		
@@ -56,7 +55,6 @@ public class User implements Serializable {
 		site.setSiteURL( url );
 		site.setFavorite( favorite );
 		site.setNotes( notes );
-		site.setIndex( folderList.get(0).getSiteList().size());
     
 		folderList.get(0).addSite(site);
 		
@@ -73,7 +71,7 @@ public class User implements Serializable {
 	}
 	
 	public String PasswordGen(int length, boolean capital, boolean lowercase, boolean number, boolean symbol){
-		String password = null;
+		String password = "";
     
     //check to make sure inputs are valid (can be removed if we use a dropdown and checkboxes)
 		if(length <4 || length >100){
